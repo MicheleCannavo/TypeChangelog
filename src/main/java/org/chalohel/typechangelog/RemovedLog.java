@@ -5,10 +5,10 @@ package org.chalohel.typechangelog;
  */
 public class RemovedLog extends AbstractTypeChagelog {
 
-  /**
-   * Instantiates a new Removed log.
-   */
-  public RemovedLog() {
+    /**
+     * Instantiates a new Removed log.
+     */
+    public RemovedLog() {
     super("-", "REMOVED");
   }
 }

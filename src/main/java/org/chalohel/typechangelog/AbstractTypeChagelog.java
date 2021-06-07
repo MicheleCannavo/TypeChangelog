@@ -7,15 +7,24 @@ import java.util.List;
  * Classe astratta che si occupa di
  * gestire i tipi per il changelog.
  *
- * @author  Cannavo' Michele
+ * @author Cannavo ' Michele
  * @version 0.8.0
- * @since   23/05/2021
+ * @since 23 /05/2021
  */
 public abstract class AbstractTypeChagelog {
 
+  /**
+   * The Symbol type.
+   */
   private final String symbolType;
+  /**
+   * The Name type.
+   */
   private final String nameType;
-  private List<String> listaAdd;
+  /**
+   * The Lista items.
+   */
+  private List<String> listaItems;
 
   /**
    * Costruttore delle classi che per i vari type changelog.
@@ -30,15 +39,25 @@ public abstract class AbstractTypeChagelog {
   protected AbstractTypeChagelog(String symbolT, String nameT) {
     this.symbolType = symbolT;
     this.nameType   = nameT;
-    this.listaAdd   = new ArrayList<>();
+    this.listaItems = new ArrayList<>();
   }
 
-  public List<String> getListaAdd() {
-    return listaAdd;
+  /**
+   * Gets lista items.
+   *
+   * @return the lista items
+   */
+  public List<String> getListaItems() {
+    return listaItems;
   }
 
-  public void setListaAdd(List<String> listaAdd) {
-    this.listaAdd = listaAdd;
+  /**
+   * Sets lista items.
+   *
+   * @param listaItems the lista items
+   */
+  public void setListaItems(List<String> listaItems) {
+    this.listaItems = listaItems;
   }
 
   /**
@@ -53,9 +72,11 @@ public abstract class AbstractTypeChagelog {
 
   /**
    * Permette di aggiunge una voce alla relativa lista di cheange
+   *
+   * @param item the item
    */
   public void add(String item) {
-    listaAdd.add(item);
+    listaItems.add(item);
   }
 
   /**
@@ -70,7 +91,7 @@ public abstract class AbstractTypeChagelog {
   public String getFormatCompactList() {
     StringBuilder sb = new StringBuilder("");
 
-    for(String str : listaAdd) {
+    for(String str : listaItems) {
       sb.append(getSymbolType())
         .append(" ")
         .append(str)
@@ -82,9 +103,9 @@ public abstract class AbstractTypeChagelog {
 
   /**
    * Formatta la lista compatta della singola tipologia in:
-   *
+   * <p>
    * **TYPE**
-   *
+   * <p>
    * - ITEM
    * - ITEM
    * - ITEM
@@ -94,14 +115,14 @@ public abstract class AbstractTypeChagelog {
   public String getFormatNormalList() {
     StringBuilder sb = new StringBuilder("");
 
-    if(!listaAdd.isEmpty()) {
+    if(!listaItems.isEmpty()) {
 
       sb.append("**")
         .append(nameType)
         .append("**")
         .append(System.lineSeparator());
 
-      for(String str : listaAdd) {
+      for(String str : listaItems) {
         sb.append("- ").append(str).append(System.lineSeparator());
       }
     }

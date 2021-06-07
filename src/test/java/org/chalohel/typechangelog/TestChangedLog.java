@@ -3,6 +3,9 @@ package org.chalohel.typechangelog;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class TestChangedLog {
@@ -20,10 +23,21 @@ public class TestChangedLog {
     }
 
     @Test
+    public void setListaItems() {
+        List<String> lista = new ArrayList<>();
+        lista.add("Item1");
+        lista.add("Item2");
+        change.setListaItems(lista);
+
+        assertEquals(lista.get(0), change.getListaItems().get(0));
+        assertEquals(lista.get(1), change.getListaItems().get(1));
+    }
+
+    @Test
     public void add() {
         String s = "item";
         change.add(s);
-        assertEquals(s, change.getListaAdd().get(0));
+        assertEquals(s, change.getListaItems().get(0));
     }
 
     @Test
@@ -37,6 +51,11 @@ public class TestChangedLog {
             "**~** secondo" + System.lineSeparator();
 
         assertEquals(s, change.getFormatCompactList());
+    }
+
+    @Test
+    public void getFormatCompactListIfListIsEmpty() {
+        assertEquals("", change.getFormatCompactList());
     }
 
     @Test

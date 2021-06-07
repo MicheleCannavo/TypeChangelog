@@ -3,6 +3,9 @@ package org.chalohel.typechangelog;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class TestRemovedLog {
@@ -20,10 +23,21 @@ public class TestRemovedLog {
     }
 
     @Test
+    public void setListaItems() {
+        List<String> lista = new ArrayList<>();
+        lista.add("Item1");
+        lista.add("Item2");
+        removed.setListaItems(lista);
+
+        assertEquals(lista.get(0), removed.getListaItems().get(0));
+        assertEquals(lista.get(1), removed.getListaItems().get(1));
+    }
+
+    @Test
     public void add() {
         String s = "item";
         removed.add(s);
-        assertEquals(s, removed.getListaAdd().get(0));
+        assertEquals(s, removed.getListaItems().get(0));
     }
 
     @Test

@@ -3,6 +3,8 @@ package org.chalohel.typechangelog;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.lang.System.lineSeparator;
+
 /**
  * Questa classe gestisce il tipo YANKED.
  * <p>
@@ -14,11 +16,12 @@ public class UnreleasedLog {
     /**
      * Lista di voci per il tipo unrelease.
      */
-    private List<String> items;
+    private final List<String> items;
 
     /**
+     * Gets items.
      *
-     * @return l'item attuale.
+     * @return l 'item attuale.
      */
     public List<String> getItems() {
         return items;
@@ -33,6 +36,7 @@ public class UnreleasedLog {
     }
 
     /**
+     * Add item.
      *
      * @param item aggiunge l'item adlla lista interna.
      */
@@ -41,6 +45,9 @@ public class UnreleasedLog {
     }
 
     /**
+     * # CASA
+     * ======
+     * <p>
      * Unrelease log string.
      *
      * @return the string
@@ -48,12 +55,12 @@ public class UnreleasedLog {
     public String getUnreleased() {
         StringBuilder str = new StringBuilder();
         str.append("## UNRELEASED")
-            .append(System.lineSeparator().repeat(2));
+            .append(lineSeparator().repeat(2));
 
         for (String s : items) {
-            str.append(s).append(System.lineSeparator());
+            str.append(s).append(lineSeparator());
         }
 
-        return str.append(System.lineSeparator()).toString();
+        return str.append(lineSeparator()).toString();
     }
 }

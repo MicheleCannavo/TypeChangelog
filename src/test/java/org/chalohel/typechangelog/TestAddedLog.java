@@ -3,6 +3,9 @@ package org.chalohel.typechangelog;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class TestAddedLog {
@@ -20,14 +23,23 @@ public class TestAddedLog {
     }
 
     @Test
+    public void setListaItems() {
+        List<String> lista = new ArrayList<>();
+        lista.add("Item1");
+        lista.add("Item2");
+
+        add.setListaItems(lista);
+
+        assertEquals(lista.get(0), add.getListaItems().get(0));
+        assertEquals(lista.get(1), add.getListaItems().get(1));
+
+    }
+
+    @Test
     public void add() {
         String s = "item";
         add.add(s);
-        assertEquals(s, add.getListaAdd().get(0));
-    }
-
-    public void setAdd(AbstractTypeChagelog add) {
-        this.add = add;
+        assertEquals(s, add.getListaItems().get(0));
     }
 
     @Test
@@ -54,6 +66,12 @@ public class TestAddedLog {
             "- primo"   + System.lineSeparator() +
             "- secondo" + System.lineSeparator();
 
-        assertEquals(s,add.getFormatNormalList());
+        assertEquals(s, add.getFormatNormalList());
+    }
+
+    @Test
+    public void getFormatNormalListIfListIsEmpty() {
+        System.out.println("dim lista" + add.getListaItems().size());
+        assertEquals("", add.getFormatNormalList());
     }
 }

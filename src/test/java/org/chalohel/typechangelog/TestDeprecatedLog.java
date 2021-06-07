@@ -3,6 +3,9 @@ package org.chalohel.typechangelog;
 import org.junit.Before;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import static org.junit.Assert.*;
 
 public class TestDeprecatedLog {
@@ -20,10 +23,21 @@ public class TestDeprecatedLog {
     }
 
     @Test
+    public void setListaItems() {
+        List<String> lista = new ArrayList<>();
+        lista.add("Item1");
+        lista.add("Item2");
+        deprecated.setListaItems(lista);
+
+        assertEquals(lista.get(0), deprecated.getListaItems().get(0));
+        assertEquals(lista.get(1), deprecated.getListaItems().get(1));
+    }
+
+    @Test
     public void add() {
         String s = "item";
         deprecated.add(s);
-        assertEquals(s, deprecated.getListaAdd().get(0));
+        assertEquals(s, deprecated.getListaItems().get(0));
     }
 
     @Test

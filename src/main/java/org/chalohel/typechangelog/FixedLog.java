@@ -5,10 +5,10 @@ package org.chalohel.typechangelog;
  */
 public class FixedLog extends AbstractTypeChagelog {
 
-  /**
-   * Instantiates a new Fixed chagelog.
-   */
-  public FixedLog() {
+    /**
+     * Instantiates a new Fixed chagelog.
+     */
+    public FixedLog() {
     super("#", "FIXED");
   }
 }

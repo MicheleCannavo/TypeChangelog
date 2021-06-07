@@ -1,1 +1,1 @@
-var moduleSearchIndex = [];updateSearchResults();
+moduleSearchIndex = [];updateSearchResults();

@@ -5,10 +5,10 @@ package org.chalohel.typechangelog;
  */
 public class DeprecatedLog extends AbstractTypeChagelog {
 
-  /**
-   * Instantiates a new Deprecated log.
-   */
-  public DeprecatedLog() {
+    /**
+     * Instantiates a new Deprecated log.
+     */
+    public DeprecatedLog() {
     super("§", "DEPRECATED");
   }
 }
