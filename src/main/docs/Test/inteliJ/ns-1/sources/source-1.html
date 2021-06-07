@@ -1,0 +1,215 @@
+
+
+
+<!DOCTYPE html>
+<html id="htmlId">
+<head>
+  <title>Coverage Report > AbstractTypeChagelog</title>
+  <style type="text/css">
+    @import "../../.css/coverage.css";
+    @import "../../.css/highlight-idea.css";
+  </style>
+  <script type="text/javascript" src="../../.js/highlight.pack.js"></script>
+</head>
+
+<body>
+<div class="content">
+<div class="breadCrumbs">
+Current scope:     <a href="../../index.html">all classes</a>
+    <span class="separator">|</span>
+    <a href="../index.html">org.chalohel.typechangelog</a>
+</div>
+
+<h1>Coverage Summary for Class: AbstractTypeChagelog (org.chalohel.typechangelog)</h1>
+
+<table class="coverageStats">
+<tr>
+  <th class="name">Class</th>
+<th class="coverageStat 
+">
+  Class, %
+</th>
+<th class="coverageStat 
+">
+  Method, %
+</th>
+<th class="coverageStat 
+">
+  Line, %
+</th>
+</tr>
+<tr>
+  <td class="name">AbstractTypeChagelog</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (1/1)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (7/7)
+  </span>
+</td>
+<td class="coverageStat">
+  <span class="percent">
+    100%
+  </span>
+  <span class="absValue">
+    (29/29)
+  </span>
+</td>
+</tr>
+
+</table>
+
+<br/>
+<br/>
+
+
+<pre>
+<div class="sourceCode" id="sourceCode"><i class="no-highlight">1</i>&nbsp;package org.chalohel.typechangelog;
+<i class="no-highlight">2</i>&nbsp;
+<i class="no-highlight">3</i>&nbsp;import java.util.ArrayList;
+<i class="no-highlight">4</i>&nbsp;import java.util.List;
+<i class="no-highlight">5</i>&nbsp;
+<i class="no-highlight">6</i>&nbsp;/**
+<i class="no-highlight">7</i>&nbsp; * Classe astratta che si occupa di
+<i class="no-highlight">8</i>&nbsp; * gestire i tipi per il changelog.
+<i class="no-highlight">9</i>&nbsp; *
+<i class="no-highlight">10</i>&nbsp; * @author  Cannavo&#39; Michele
+<i class="no-highlight">11</i>&nbsp; * @version 0.8.0
+<i class="no-highlight">12</i>&nbsp; * @since   23/05/2021
+<i class="no-highlight">13</i>&nbsp; */
+<i class="no-highlight">14</i>&nbsp;public abstract class AbstractTypeChagelog {
+<i class="no-highlight">15</i>&nbsp;
+<i class="no-highlight">16</i>&nbsp;  private final String symbolType;
+<i class="no-highlight">17</i>&nbsp;  private final String nameType;
+<i class="no-highlight">18</i>&nbsp;  private List&lt;String&gt; listaItems;
+<i class="no-highlight">19</i>&nbsp;
+<i class="no-highlight">20</i>&nbsp;  /**
+<i class="no-highlight">21</i>&nbsp;   * Costruttore delle classi che per i vari type changelog.
+<i class="no-highlight">22</i>&nbsp;   * Per estendere questa classe astratta, basta solamente
+<i class="no-highlight">23</i>&nbsp;   * chiamare il costruttore con i paramatri richiesti.
+<i class="no-highlight">24</i>&nbsp;   * Tutti i metodi sono già implementati. Ogni classe differisce solo per
+<i class="no-highlight">25</i>&nbsp;   * il symbolType e il nameType
+<i class="no-highlight">26</i>&nbsp;   *
+<i class="no-highlight">27</i>&nbsp;   * @param symbolT Simbolo associato al Type Changelog
+<i class="no-highlight">28</i>&nbsp;   * @param nameT   Nome associato al Type changelog
+<i class="no-highlight">29</i>&nbsp;   */
+<b class="fc"><i class="no-highlight">30</i>&nbsp;  protected AbstractTypeChagelog(String symbolT, String nameT) {</b>
+<b class="fc"><i class="no-highlight">31</i>&nbsp;    this.symbolType = symbolT;</b>
+<b class="fc"><i class="no-highlight">32</i>&nbsp;    this.nameType   = nameT;</b>
+<b class="fc"><i class="no-highlight">33</i>&nbsp;    this.listaItems = new ArrayList&lt;&gt;();</b>
+<b class="fc"><i class="no-highlight">34</i>&nbsp;  }</b>
+<i class="no-highlight">35</i>&nbsp;
+<i class="no-highlight">36</i>&nbsp;  public List&lt;String&gt; getListaItems() {
+<b class="fc"><i class="no-highlight">37</i>&nbsp;    return listaItems;</b>
+<i class="no-highlight">38</i>&nbsp;  }
+<i class="no-highlight">39</i>&nbsp;
+<i class="no-highlight">40</i>&nbsp;  public void setListaItems(List&lt;String&gt; listaItems) {
+<b class="fc"><i class="no-highlight">41</i>&nbsp;    this.listaItems = listaItems;</b>
+<b class="fc"><i class="no-highlight">42</i>&nbsp;  }</b>
+<i class="no-highlight">43</i>&nbsp;
+<i class="no-highlight">44</i>&nbsp;  /**
+<i class="no-highlight">45</i>&nbsp;   * Questo metodo restituisce una stringa che riporta il simbolo
+<i class="no-highlight">46</i>&nbsp;   * del type Implementato formattato col grassetto
+<i class="no-highlight">47</i>&nbsp;   *
+<i class="no-highlight">48</i>&nbsp;   * @return il simbolo in grassetto
+<i class="no-highlight">49</i>&nbsp;   */
+<i class="no-highlight">50</i>&nbsp;  public String getSymbolType() {
+<b class="fc"><i class="no-highlight">51</i>&nbsp;    return &quot;**&quot;+symbolType+&quot;**&quot;;</b>
+<i class="no-highlight">52</i>&nbsp;  }
+<i class="no-highlight">53</i>&nbsp;
+<i class="no-highlight">54</i>&nbsp;  /**
+<i class="no-highlight">55</i>&nbsp;   * Permette di aggiunge una voce alla relativa lista di cheange
+<i class="no-highlight">56</i>&nbsp;   */
+<i class="no-highlight">57</i>&nbsp;  public void add(String item) {
+<b class="fc"><i class="no-highlight">58</i>&nbsp;    listaItems.add(item);</b>
+<b class="fc"><i class="no-highlight">59</i>&nbsp;  }</b>
+<i class="no-highlight">60</i>&nbsp;
+<i class="no-highlight">61</i>&nbsp;  /**
+<i class="no-highlight">62</i>&nbsp;   * Formatta la **lista** compatta della singola tipologia in:
+<i class="no-highlight">63</i>&nbsp;   * &lt;br/&gt;
+<i class="no-highlight">64</i>&nbsp;   * **SIMBOL** ITEM&lt;br/&gt;
+<i class="no-highlight">65</i>&nbsp;   * **SIMBOL** ITEM&lt;br/&gt;
+<i class="no-highlight">66</i>&nbsp;   * **SIMBOL** ITEM&lt;br/&gt;
+<i class="no-highlight">67</i>&nbsp;   *
+<i class="no-highlight">68</i>&nbsp;   * @return la stringa formattata in modo compatto.
+<i class="no-highlight">69</i>&nbsp;   */
+<i class="no-highlight">70</i>&nbsp;  public String getFormatCompactList() {
+<b class="fc"><i class="no-highlight">71</i>&nbsp;    StringBuilder sb = new StringBuilder(&quot;&quot;);</b>
+<i class="no-highlight">72</i>&nbsp;
+<b class="fc"><i class="no-highlight">73</i>&nbsp;    for(String str : listaItems) {</b>
+<b class="fc"><i class="no-highlight">74</i>&nbsp;      sb.append(getSymbolType())</b>
+<b class="fc"><i class="no-highlight">75</i>&nbsp;        .append(&quot; &quot;)</b>
+<b class="fc"><i class="no-highlight">76</i>&nbsp;        .append(str)</b>
+<b class="fc"><i class="no-highlight">77</i>&nbsp;        .append(System.lineSeparator());</b>
+<b class="fc"><i class="no-highlight">78</i>&nbsp;    }</b>
+<b class="fc"><i class="no-highlight">79</i>&nbsp;    return sb.toString();</b>
+<i class="no-highlight">80</i>&nbsp;
+<i class="no-highlight">81</i>&nbsp;  }
+<i class="no-highlight">82</i>&nbsp;
+<i class="no-highlight">83</i>&nbsp;  /**
+<i class="no-highlight">84</i>&nbsp;   * Formatta la lista compatta della singola tipologia in:
+<i class="no-highlight">85</i>&nbsp;   *
+<i class="no-highlight">86</i>&nbsp;   * **TYPE**
+<i class="no-highlight">87</i>&nbsp;   *
+<i class="no-highlight">88</i>&nbsp;   * - ITEM
+<i class="no-highlight">89</i>&nbsp;   * - ITEM
+<i class="no-highlight">90</i>&nbsp;   * - ITEM
+<i class="no-highlight">91</i>&nbsp;   *
+<i class="no-highlight">92</i>&nbsp;   * @return la stringa formattata in modo Normal
+<i class="no-highlight">93</i>&nbsp;   */
+<i class="no-highlight">94</i>&nbsp;  public String getFormatNormalList() {
+<b class="fc"><i class="no-highlight">95</i>&nbsp;    StringBuilder sb = new StringBuilder(&quot;&quot;);</b>
+<i class="no-highlight">96</i>&nbsp;
+<b class="fc"><i class="no-highlight">97</i>&nbsp;    if(!listaItems.isEmpty()) {</b>
+<i class="no-highlight">98</i>&nbsp;
+<b class="fc"><i class="no-highlight">99</i>&nbsp;      sb.append(&quot;**&quot;)</b>
+<b class="fc"><i class="no-highlight">100</i>&nbsp;        .append(nameType)</b>
+<b class="fc"><i class="no-highlight">101</i>&nbsp;        .append(&quot;**&quot;)</b>
+<b class="fc"><i class="no-highlight">102</i>&nbsp;        .append(System.lineSeparator());</b>
+<i class="no-highlight">103</i>&nbsp;
+<b class="fc"><i class="no-highlight">104</i>&nbsp;      for(String str : listaItems) {</b>
+<b class="fc"><i class="no-highlight">105</i>&nbsp;        sb.append(&quot;- &quot;).append(str).append(System.lineSeparator());</b>
+<b class="fc"><i class="no-highlight">106</i>&nbsp;      }</b>
+<i class="no-highlight">107</i>&nbsp;    }
+<b class="fc"><i class="no-highlight">108</i>&nbsp;    return sb.toString();</b>
+<i class="no-highlight">109</i>&nbsp;  }
+<i class="no-highlight">110</i>&nbsp;}
+</div>
+</pre>
+</div>
+
+<script type="text/javascript">
+(function() {
+    var msie = false, msie9 = false;
+    /*@cc_on
+      msie = true;
+      @if (@_jscript_version >= 9)
+        msie9 = true;
+      @end
+    @*/
+
+    if (!msie || msie && msie9) {
+        var codeBlock = document.getElementById('sourceCode');
+
+        if (codeBlock) {
+            hljs.highlightBlock(codeBlock);
+        }
+    }
+})();
+</script>
+
+<div class="footer">
+    
+    <div style="float:right;">generated on 2021-06-07 15:42</div>
+</div>
+</body>
+</html>

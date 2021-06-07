@@ -1,0 +1,9 @@
+GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_COVERED,LINE_MISSED,LINE_COVERED,COMPLEXITY_MISSED,COMPLEXITY_COVERED,METHOD_MISSED,METHOD_COVERED
+TypeChangelog,org.chalohel.typechangelog,FixedLog,0,5,0,0,0,2,0,1,0,1
+TypeChangelog,org.chalohel.typechangelog,AbstractTypeChagelog,0,105,0,6,0,29,0,10,0,7
+TypeChangelog,org.chalohel.typechangelog,UnreleasedLog,0,52,0,2,0,13,0,5,0,4
+TypeChangelog,org.chalohel.typechangelog,SecurityLog,0,5,0,0,0,2,0,1,0,1
+TypeChangelog,org.chalohel.typechangelog,ChangedLog,0,5,0,0,0,2,0,1,0,1
+TypeChangelog,org.chalohel.typechangelog,DeprecatedLog,0,5,0,0,0,2,0,1,0,1
+TypeChangelog,org.chalohel.typechangelog,RemovedLog,0,5,0,0,0,2,0,1,0,1
+TypeChangelog,org.chalohel.typechangelog,AddedLog,0,5,0,0,0,2,0,1,0,1
