@@ -8,20 +8,35 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * The type Test fixed log.
+ */
 public class TestFixedLog {
+    /**
+     * The Fixed.
+     */
     AbstractTypeChagelog fixed;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         fixed = new FixedLog();
     }
 
+    /**
+     * Gets symbol type.
+     */
     @Test
     public void getSymbolType() {
 
         assertEquals("**#**", fixed.getSymbolType());
     }
 
+    /**
+     * Sets lista items.
+     */
     @Test
     public void setListaItems() {
         List<String> lista = new ArrayList<>();
@@ -33,6 +48,9 @@ public class TestFixedLog {
         assertEquals(lista.get(1), fixed.getListaItems().get(1));
     }
 
+    /**
+     * Add.
+     */
     @Test
     public void add() {
         String s = "item";
@@ -40,6 +58,9 @@ public class TestFixedLog {
         assertEquals(s, fixed.getListaItems().get(0));
     }
 
+    /**
+     * Gets format compact list.
+     */
     @Test
     public void getFormatCompactList() {
 
@@ -53,6 +74,9 @@ public class TestFixedLog {
         assertEquals(s, fixed.getFormatCompactList());
     }
 
+    /**
+     * Gets format normal list.
+     */
     @Test
     public void getFormatNormalList() {
 
@@ -65,5 +89,13 @@ public class TestFixedLog {
                 "- secondo" + System.lineSeparator();
 
         assertEquals(s, fixed.getFormatNormalList());
+    }
+
+    /**
+     * Gets format normal list if list is empty.
+     */
+    @Test
+    public void getFormatNormalListIfListIsEmpty() {
+        assertEquals("", fixed.getFormatNormalList());
     }
 }

@@ -8,20 +8,35 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * The type Test removed log.
+ */
 public class TestRemovedLog {
+    /**
+     * The Removed.
+     */
     AbstractTypeChagelog removed;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         removed = new RemovedLog();
     }
 
+    /**
+     * Gets symbol type.
+     */
     @Test
     public void getSymbolType() {
 
         assertEquals("**-**", removed.getSymbolType());
     }
 
+    /**
+     * Sets lista items.
+     */
     @Test
     public void setListaItems() {
         List<String> lista = new ArrayList<>();
@@ -33,6 +48,9 @@ public class TestRemovedLog {
         assertEquals(lista.get(1), removed.getListaItems().get(1));
     }
 
+    /**
+     * Add.
+     */
     @Test
     public void add() {
         String s = "item";
@@ -40,6 +58,9 @@ public class TestRemovedLog {
         assertEquals(s, removed.getListaItems().get(0));
     }
 
+    /**
+     * Gets format compact list.
+     */
     @Test
     public void getFormatCompactList() {
 
@@ -53,6 +74,9 @@ public class TestRemovedLog {
         assertEquals(s, removed.getFormatCompactList());
     }
 
+    /**
+     * Gets format normal list.
+     */
     @Test
     public void getFormatNormalList() {
 
@@ -65,5 +89,13 @@ public class TestRemovedLog {
                 "- secondo" + System.lineSeparator();
 
         assertEquals(s, removed.getFormatNormalList());
+    }
+
+    /**
+     * Gets format normal list if list is empty.
+     */
+    @Test
+    public void getFormatNormalListIfListIsEmpty() {
+        assertEquals("", removed.getFormatNormalList());
     }
 }

@@ -1,12 +1,14 @@
 package org.chalohel.typechangelog;
 
 /**
- * Lista di cambiamenti della nuova versione
+ *
+ * Tipo Changed log.
+ * Comunica i cambiamenti di funzionalità fatte al progetto.
  */
 public class ChangedLog extends AbstractTypeChagelog {
 
   /**
-   * Instantiates a new Changed log.
+   * Istanzia un nuovo Changed log.
    */
   public ChangedLog() {
     super("~", "CHANGED");

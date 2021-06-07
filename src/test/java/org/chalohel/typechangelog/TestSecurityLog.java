@@ -8,19 +8,35 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * The type Test security log.
+ */
 public class TestSecurityLog {
+    /**
+     * The Security.
+     */
     AbstractTypeChagelog security;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         security = new SecurityLog();
     }
 
+    /**
+     * Gets symbol type.
+     */
     @Test
     public void getSymbolType() {
 
         assertEquals("**$**", security.getSymbolType());
     }
+
+    /**
+     * Sets lista items.
+     */
     @Test
     public void setListaItems() {
         List<String> lista = new ArrayList<>();
@@ -32,6 +48,9 @@ public class TestSecurityLog {
         assertEquals(lista.get(1), security.getListaItems().get(1));
     }
 
+    /**
+     * Add.
+     */
     @Test
     public void add() {
         String s = "item";
@@ -39,6 +58,9 @@ public class TestSecurityLog {
         assertEquals(s, security.getListaItems().get(0));
     }
 
+    /**
+     * Gets format compact list.
+     */
     @Test
     public void getFormatCompactList() {
 
@@ -52,6 +74,9 @@ public class TestSecurityLog {
         assertEquals(s, security.getFormatCompactList());
     }
 
+    /**
+     * Gets format normal list.
+     */
     @Test
     public void getFormatNormalList() {
 
@@ -64,5 +89,13 @@ public class TestSecurityLog {
                 "- secondo" + System.lineSeparator();
 
         assertEquals(s, security.getFormatNormalList());
+    }
+
+    /**
+     * Gets format normal list if list is empty.
+     */
+    @Test
+    public void getFormatNormalListIfListIsEmpty() {
+        assertEquals("", security.getFormatNormalList());
     }
 }

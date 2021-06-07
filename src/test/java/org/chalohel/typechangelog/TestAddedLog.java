@@ -8,20 +8,35 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * The type Test added log.
+ */
 public class TestAddedLog {
+    /**
+     * The Add.
+     */
     AbstractTypeChagelog add;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
          add = new AddedLog();
     }
 
+    /**
+     * Gets symbol type.
+     */
     @Test
     public void getSymbolType() {
 
         assertEquals("**+**", add.getSymbolType());
     }
 
+    /**
+     * Sets lista items.
+     */
     @Test
     public void setListaItems() {
         List<String> lista = new ArrayList<>();
@@ -35,6 +50,9 @@ public class TestAddedLog {
 
     }
 
+    /**
+     * Add.
+     */
     @Test
     public void add() {
         String s = "item";
@@ -42,6 +60,9 @@ public class TestAddedLog {
         assertEquals(s, add.getListaItems().get(0));
     }
 
+    /**
+     * Gets format compact list.
+     */
     @Test
     public void getFormatCompactList() {
 
@@ -55,6 +76,9 @@ public class TestAddedLog {
         assertEquals(s, add.getFormatCompactList());
     }
 
+    /**
+     * Gets format normal list.
+     */
     @Test
     public void getFormatNormalList() {
 
@@ -69,9 +93,11 @@ public class TestAddedLog {
         assertEquals(s, add.getFormatNormalList());
     }
 
+    /**
+     * Gets format normal list if list is empty.
+     */
     @Test
     public void getFormatNormalListIfListIsEmpty() {
-        System.out.println("dim lista" + add.getListaItems().size());
         assertEquals("", add.getFormatNormalList());
     }
 }

@@ -8,20 +8,35 @@ import java.util.List;
 
 import static org.junit.Assert.*;
 
+/**
+ * The type Test changed log.
+ */
 public class TestChangedLog {
+    /**
+     * The Change.
+     */
     AbstractTypeChagelog change;
 
+    /**
+     * Sets up.
+     */
     @Before
     public void setUp() {
         change = new ChangedLog();
     }
 
+    /**
+     * Gets symbol type.
+     */
     @Test
     public void getSymbolType() {
 
         assertEquals("**~**", change.getSymbolType());
     }
 
+    /**
+     * Sets lista items.
+     */
     @Test
     public void setListaItems() {
         List<String> lista = new ArrayList<>();
@@ -33,6 +48,9 @@ public class TestChangedLog {
         assertEquals(lista.get(1), change.getListaItems().get(1));
     }
 
+    /**
+     * Add.
+     */
     @Test
     public void add() {
         String s = "item";
@@ -40,6 +58,9 @@ public class TestChangedLog {
         assertEquals(s, change.getListaItems().get(0));
     }
 
+    /**
+     * Gets format compact list.
+     */
     @Test
     public void getFormatCompactList() {
 
@@ -53,11 +74,16 @@ public class TestChangedLog {
         assertEquals(s, change.getFormatCompactList());
     }
 
+    /**
+     * Gets format normal list if list is empty.
+     */
     @Test
-    public void getFormatCompactListIfListIsEmpty() {
-        assertEquals("", change.getFormatCompactList());
+    public void getFormatNormalListIfListIsEmpty() {
+        assertEquals("", change.getFormatNormalList());
     }
-
+    /**
+     * Gets format normal list.
+     */
     @Test
     public void getFormatNormalList() {
 
